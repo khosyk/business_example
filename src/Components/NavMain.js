@@ -1,51 +1,60 @@
-import {Link} from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../Styles/dist/NavMain.css';
 
-export default function Navigation (){
+// icons
+import Logo from '../images/tree.png'
+import { FcMenu } from 'react-icons/fc';
+export default function NavMain() {
 
-    return(
-        <>
-      <header>
-        <div class="inner">
-          <Link href="#">
+  return (
+    <>
+      <div className="inner">
+        <Link to="/">
+          <div className='logo'>
+            <img src={Logo}alt='dcodelab logo' />
             <h1>
-                DCODELAB
+              DCODELAB
             </h1>
-          </Link>
-          <nav class="menu">
-            <ul class="gnb">
-              <li>
-                <Link href="">
-                    ABOUT
+          </div>
+        </Link>
+        <nav className="menu">
+          <ul className="gnb">
+            <li>
+              <Link className='gnbLink' to="/about">
+                ABOUT
+              </Link>
+            </li>
+            <li>
+              <Link className='gnbLink' to="/members">
+                MEMBERS
+              </Link>
+            </li>
+            <li>
+              <Link className='gnbLink' to="/youtube">
+                YOUTUBE
+              </Link>
+            </li>
+            <li>
+              <Link className='gnbLink' to="/gallery">
+                GALLERY
+              </Link>
+            </li>
+            <li>
+              <Link className='gnbLink' to="/contact">
+                CONTACT
+              </Link>
+            </li>
+            <li>
+              <div className="btnMenu">
+                <Link to="menu" >
+                  <FcMenu />
                 </Link>
-              </li>
-              <li>
-                <Link href="">
-                    MEMBERS
-                </Link>
-              </li>
-              
-              <li>
-                <Link href="">
-                    YOUTUBE
-                </Link>
-              </li>
-              
-              <li>
-                <Link href="">
-                    GALLERY
-                </Link>
-              </li>
-
-              
-              <li>
-                <Link href="">
-                    CONTACT
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-        </>
-    );
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </>
+  );
 }
