@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../Styles/dist/NavMain.css';
+import '../Styles/NavMain.css';
 
 // icons
 import Logo from '../images/tree.png'

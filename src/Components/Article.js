@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/dist/Main.css';
+import '../Styles/Main.css';
 
 export default function Article({name,num, first, second, third, fourth}){
     return(
