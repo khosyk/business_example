@@ -45,6 +45,8 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
-  "homepage": "http://JIHYE-P.github.io/react-github-pages"
-
+  "homepage": "https://khosyk.github.io/business_example/",
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
 }
