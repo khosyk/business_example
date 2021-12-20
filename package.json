@@ -45,7 +45,7 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
-  "homepage": "https://khosyk.github.io/business_example/",
+  "homepage": "https://khosyk.github.io/",
   "devDependencies": {
     "gh-pages": "^3.2.3"
   }
