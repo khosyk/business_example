@@ -23,7 +23,8 @@ import { FaUserFriends } from 'react-icons/fa';
 export default function Main() {
     return (
         <>
-            <section id="banner" style={{ background: `url(${Banner})` }}>
+            <section id="banner" 
+        >
                 <div className="inner">
                     <p>
                         LOREMIPSUM

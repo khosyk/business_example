@@ -3,10 +3,10 @@ header {
 }
 header .inner {
   height: 70px;
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
   align-items: center;
-  margin: auto 40px;
+  margin: auto 0px;
 }
 header .inner .logo {
   display: flex;
@@ -31,6 +31,11 @@ header .inner .gnb li {
 header .inner .gnb li .gnbLink {
   font-size: 16px;
   color: #000;
+}
+@media screen and (max-width: 767px) {
+  header .inner .gnb li .gnbLink {
+    display: none;
+  }
 }
 header .inner .gnb .btnMenu {
   padding-top: 3px;

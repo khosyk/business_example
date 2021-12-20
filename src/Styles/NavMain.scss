@@ -3,12 +3,11 @@ header{
 
     width:100%;
     .inner{
-
         height:70px;
-        justify-content: space-between;
+        justify-content: space-around;
         display: flex;
         align-items: center;
-        margin:auto 40px;
+        margin:auto 0px;
 
         .logo{
             display: flex;
@@ -27,12 +26,18 @@ header{
         .gnb{
             display:flex;
             align-items: center;
+
             li{
                 padding-left:20px;
                 .gnbLink{
                     font-size:16px;
                     color:#000;
+                    
+            @media screen and (max-width:767px){
+                display: none;
+            }
                 }
+                
             }
             .btnMenu{
                 padding-top:3px;

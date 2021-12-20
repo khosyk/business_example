@@ -1,119 +1,109 @@
+@charset "UTF-8";
 footer {
   width: 100%;
   position: relative;
 }
-footer .BgImg {
-  position: absolute;
-  opacity: 1;
-  width: 50%;
-  height: 270px;
-  padding-left: 15%;
-  background: no-repeat center/100% url(../images/stairs.jpg);
-  z-index: 2;
-}
-footer .BgImg .BgBlock {
-  position: absolute;
-  opacity: 0.9;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 270px;
-  padding: 50px;
-  padding-left: 5%;
-  background-color: #c2255c;
-  z-index: 2;
-}
-footer .BgImg .arrows {
+footer .arrows {
   display: flex;
   justify-content: space-around;
   align-items: center;
   position: absolute;
   bottom: 0;
-  right: 0;
-  z-index: 999;
-  width: 100px;
-  height: 50px;
-  font-size: 30px;
+  right: 50%;
+  width: 80px;
+  height: 40px;
+  font-size: 1em;
   color: #fff;
   background-color: black;
+  z-index: 999;
 }
-footer .BgImg .arrows .arrow {
-  width: 100%;
-  height: 100%;
+@media screen and (max-width: 1025px) {
+  footer .arrows {
+    font-size: 0.8em;
+  }
+}
+footer .arrows .arrow {
   text-align: center;
-  line-height: 50px;
   cursor: pointer;
+  z-index: 999;
 }
-footer .BgImg .arrows .arrow:hover {
-  color: #c2255c;
+footer .arrows .arrow:hover {
+  color: #d6336c;
 }
 footer .footerLeft {
   width: 50%;
-  padding-left: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 270px;
+  align-items: center;
   color: #fff;
-  background-color: #c2255c;
+  z-index: 3;
+  padding: 60px 0px;
+  overflow: hidden;
+  position: relative;
+  background-color: #d6336c;
+}
+footer .footerLeft .BgImg {
+  width: 100%;
+  position: absolute;
+  padding-top: 500px;
+  z-index: 2;
+  opacity: 0.3;
+  background: no-repeat center/cover fixed url(../images/stairs.jpg);
 }
 footer .footerLeft .wrap {
   position: relative;
   margin: 0px auto;
+  padding-left: 35%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-}
-footer .footerLeft .wrap .number {
-  position: absolute;
-  font: 900 45px "Work Sans", sans-serif;
-  color: #ddd;
-  left: -50px;
-  top: -30px;
-  padding-right: 5px;
-  overflow: hidden;
-  z-index: 1;
-}
-footer .footerLeft .wrap .number .numberCover {
-  display: none;
+  align-items: flex-start;
+  justify-content: center;
 }
 footer .footerLeft .wrap span {
   font-size: 35px;
   font-weight: 100;
   letter-spacing: 3px;
   margin-bottom: -10px;
-  z-index: 3;
 }
-footer .footerLeft .wrap h2 {
+@media screen and (max-width: 1025px) {
+  footer .footerLeft .wrap span {
+    font-size: 16px;
+    line-height: 2;
+  }
+}
+footer .footerLeft .wrap b {
   font: bolder 35px "Black Han Sans", sans-serif;
   padding-left: 2px;
   margin-bottom: 10px;
-  z-index: 3;
 }
-footer .footerLeft .wrap h2::first-letter {
+footer .footerLeft .wrap b::first-letter {
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 100;
+}
+@media screen and (max-width: 1025px) {
+  footer .footerLeft .wrap b {
+    font-size: 16px;
+  }
 }
 footer .footerLeft .wrap .p1 {
   width: 70%;
   margin-bottom: 15px;
-  z-index: 3;
 }
 footer .footerLeft .wrap .p2 {
   width: 70%;
   font-weight: 100;
-  z-index: 3;
 }
 footer .footerRight {
   position: absolute;
   top: 50px;
   background-color: #000;
   width: 100%;
-  z-index: -1;
+  z-index: -2;
   display: flex;
   justify-content: flex-end;
-  height: 280px;
+  padding: 50px 0px;
   color: white;
 }
 footer .footerRight .wrap {
@@ -139,12 +129,17 @@ footer .footerRight .wrap span {
   margin-bottom: 18px;
 }
 footer .footerRight .wrap .p1 {
-  width: 110px;
+  width: 120px;
   margin-bottom: 15px;
   font-size: 14px;
+  display: block;
+}
+footer .footerRight .wrap .p1::after {
+  content: "● ex@mail.com";
+  display: block;
 }
 footer .footerRight .wrap .p2 {
-  width: 50%;
+  width: 60%;
   font-weight: 100;
   font-size: 12px;
   color: #888;
@@ -153,18 +148,29 @@ footer .dots {
   position: absolute;
   top: 50px;
   width: 100%;
-  z-index: -1;
   display: flex;
   justify-content: flex-end;
-  height: 280px;
 }
-footer .dots div {
-  position: absolute;
+footer .dots ul {
   margin-top: 38px;
-  width: 50%;
+  width: 45%;
   display: flex;
-  justify-content: center;
-  color: #888;
-  font-size: 18px;
+  justify-content: flex-start;
+  padding-left: 20%;
   z-index: 999;
+}
+@media screen and (max-width: 1025px) {
+  footer .dots ul {
+    padding-left: 10%;
+  }
+}
+footer .dots ul li {
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  line-height: 20px;
+  background-color: #888;
+  border-radius: 50%;
+  padding: 2.5px;
+  margin-left: 5px;
 }/*# sourceMappingURL=Footer.css.map */
