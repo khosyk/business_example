@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 
 // component
 import Article from '../Components/Article';
+import Loader from '../Components/Loader';
 
 // icons
 import {
@@ -10,15 +11,18 @@ import {
 } from 'react-icons/bs';
 
 // sources
-import {BannerVideo} from '../images/youtubeBanner.mp4';
+import loadVideo from '../images/t.mp4';
+import { Link } from 'react-router-dom';
 
 
-export default function Youtube() {
+export default function Youtube(props) {
+    const { items: data, loader } = props;
+    const popup = useRef(null);
     return (
         <>
             <Banner />
-            <Youtube01/>
-            <Youtube02/>
+            <Youtube01 />
+            <Youtube02 data={data} loader={loader} popup={popup} />
         </>
     )
 }
@@ -26,11 +30,11 @@ export default function Youtube() {
 
 
 const Banner = () => {
-    return (
+    return (<>
+
         <section id="youtubeBanner">
-        <video autoplay muted loop width='100%' height='100%'>
-            <source src={BannerVideo} type='video/mp4'/>
-        </video>
+            <video src={loadVideo} autoPlay muted loop >
+            </video>
             <div className="inner">
                 <div className='wrap'>
                     <p>
@@ -43,12 +47,14 @@ const Banner = () => {
                 </div>
             </div>
         </section>
+
+    </>
     );
 }
 
 
 const Youtube01 = () => {
-    
+
     return (
 
         <section id='youtube01'>
@@ -57,14 +63,15 @@ const Youtube01 = () => {
                 num='01' first='LOREM' second='IPSUM' third='Lorem ipsum, dolor sit amet'
                 fourth='adipisicing elit. Incidunt blanditiis fugiat similique cupiditate nobis fugit, veniam amet aut distinctio obcaecati?'
             />
-            
+
         </section>
 
     )
 }
 
 
-const Youtube02 = () => {
+const Youtube02 = ({ data, popup }) => {
+
     return (
         <section id="youtube02">
             <div className='inner'>
@@ -73,9 +80,58 @@ const Youtube02 = () => {
                     <div>02</div>
                 </div>
                 <h3>
-                    OUR TEAM
+                    OUR WORK
                 </h3>
-            </div>
+                {data === null ? <Loader /> : <div>
+                    <ul>
+                        <li>
+                            <article>
+                                <div>
+                                    <img src={`${data[0].snippet.thumbnails.medium.url}`} alt="youtube" onClick={(data,popup) => {data.concat((data, popup) =><YoutubePopup data={data} popup={popup}/> )
+                                    }} />
+                                    <h1>${data[0].snippet.title}</h1>
+                                </div>
+                                <div>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing.
+                                    </p>
+                                    <span>PROJECT 21.12.20</span>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                    </div>}
+                </div>
         </section>
+    )
+}
+
+
+// const onRemove = id => {
+//     // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
+//     // = user.id 가 id 인 것을 제거함
+//     setUsers(users.filter(user => user.id !== id));
+//   };
+
+const YoutubeLists = (data) => {
+
+    return (
+        <>
+
+        </>
+    )
+}
+
+
+const YoutubePopup = ({ data, popup }) => {
+    console.log(data);
+    popup.current.classList.add('on');
+    return (
+        <figure ref={popup}>
+            <iframe src={`https://www.youtube.com/embed/${}`} allowfullscreen frameborder='0' width="600" height="300" title='#'>youtube video </iframe>
+            <span class='btnClose' onClick={() => {
+                popup.current.classList.remove('off');
+            }}>close</span>
+        </figure>
     )
 }

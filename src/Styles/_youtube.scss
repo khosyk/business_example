@@ -1,9 +1,11 @@
 
+
 #youtubeBanner{
     width:100%;
     padding-top:30%;
     min-height: 600px;
     position: relative;
+    margin-bottom:100px;
     @media screen and (min-width:1279px) {
         min-height:none;
         padding-top:50%;
@@ -12,6 +14,17 @@
     @media screen and (max-width:1025px) {
         background: #000;
     }
+    
+    video{
+        position: absolute;
+        top:0px;
+        width:100%;
+        min-width: 1180px;
+        min-height:600px;
+        height: inherit;
+        top:0;
+    }
+
     .inner{
         position: absolute;
         display: flex;
@@ -20,7 +33,7 @@
         width:48%;
         padding-left:20%;
         min-width:500px;
-        height:550px;
+        height:600px;
         transition-duration: 3s;
         transition:all 1s ease-in-out;
         @media screen and(max-width:1279px) {
@@ -39,6 +52,7 @@
         flex-direction: column;
         align-items:flex-start;
         justify-content: space-around;
+        padding-bottom:13%;
         @media screen and(min-width:1279px){
             height:100%;
             justify-content: center;
@@ -49,6 +63,7 @@
             font-weight:100;
             padding-left:2px;
             letter-spacing: 5px;
+            padding-bottom: 50px;
         }
         .title{
             span{
@@ -84,12 +99,11 @@
     display: flex;
     width:100%;
     justify-content: center;
-    margin-bottom:150px;
+    margin-bottom:100px;
     @media screen and(max-width:1025px) {
         overflow: hidden;
     }
     .word{
-        border-top: 3px solid #000;
         right:0;
         width:80%;
         z-index:0;
@@ -149,7 +163,7 @@
                 margin-bottom:10px;
             }
             .p1{
-                width:70%;
+                width:100%;
                 margin-bottom:15px;
             @media screen and(max-width:1025px) {
                 width:100%;
@@ -171,7 +185,7 @@
 
 
 #youtube02{
-    margin:200px auto 50px auto;
+    margin:100px auto 50px auto;
     padding: 50px 0px;
     width:100%;
     display: flex;
@@ -212,83 +226,6 @@
             letter-spacing: 8px;
             font-weight: 100;
             margin-bottom: 80px;
-        }
-        ul{
-            border-top: 2px solid black;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding-top: 80px;
-            max-width: 1050px;
-            flex: 1 auto;
-            flex-wrap: wrap;
-            li{
-                position: relative;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                margin-bottom:30px;
-                div{
-                    width:100%;
-                    height:400px;
-                    overflow: hidden;
-                    margin-bottom:10px;
-                    
-                    img{
-                    height:400px;
-                    
-                    }
-                    ul{
-                        position: absolute;
-                        bottom:-20px;
-                        right:0;
-                        display: flex;
-                        border:none;
-                        li{
-                            font-size:35px;
-                            line-height: 35px;
-                            border-radius: 50%;
-                            width:35px;
-                            height:35px;
-                            margin-left:5px;
-                            cursor: pointer;
-                            .icons1{
-                            color:white;
-                            background-color: black;
-                            border-radius: 50%;
-                            }
-                            .icons3{
-                            color:white;
-                            background-color: black;
-                            border-radius: 50%;
-                            }
-                &:hover{
-                    .icons1{
-                        background-color:rgb(54, 119, 216);
-                    }
-                    .icons2{
-                        color:rgb(207, 0, 0);
-                    }
-                    .icons3{
-                        background-color:brown;
-                    }
-                }
-                        }
-                    }
-                }
-                span{
-                    margin-bottom:5px;
-                    width:100%;
-                    text-align: left;
-                    font-size:18px;
-                    font-weight: bold;
-                }
-                p{
-                    width:100%;
-                    text-align: left;
-                }
-            }
-
         }
     }
 }
