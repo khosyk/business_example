@@ -84,12 +84,10 @@ header .inner .gnb .btnMenu {
   top: 0;
   width: 48%;
   padding-left: 20%;
-  min-width: 500px;
   height: 600px;
   background-color: #000;
   color: white;
-  transition-duration: 3s;
-  transition: all 1s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 @media screen and (max-width: 1279px) {
   #banner .inner {
@@ -133,10 +131,6 @@ header .inner .gnb .btnMenu {
 }
 #banner .inner .wrap .title h1 span {
   color: #d6336c;
-  letter-spacing: 3px;
-  font-size: 40px;
-  font-weight: bolder;
-  font-family: "Black Han Sans", sans-serif;
 }
 #banner .inner .nums ul {
   display: flex;
@@ -202,12 +196,11 @@ header .inner .gnb .btnMenu {
 #intro01 .word {
   width: 48%;
   padding-left: 20%;
-  min-width: 500px;
   z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: all ease-in-out 1s;
+  transition: all ease-in-out 0.3;
 }
 @media screen and (max-width: 1025px) {
   #intro01 .word {
@@ -229,7 +222,7 @@ header .inner .gnb .btnMenu {
     width: 100%;
     align-items: center;
     text-align: center;
-    transition: all ease-in-out 1s;
+    transition: all ease-in-out 0.3s;
   }
 }
 #intro01 .word .wrap .number {
@@ -317,7 +310,7 @@ header .inner .gnb .btnMenu {
     right: 0;
     height: 400px;
     overflow: hidden;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 }
 @media screen and (max-width: 1025px) {
@@ -371,7 +364,7 @@ header .inner .gnb .btnMenu {
   align-items: flex-end;
   text-align: right;
   padding: 10px;
-  transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.3;
 }
 #intro01 .wrapArticles .productLink p {
   color: #d6336c;
@@ -391,7 +384,7 @@ header .inner .gnb .btnMenu {
     top: 240px;
     width: 100px;
     height: 100px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 }
 @media screen and (max-width: 1025px) {
@@ -409,7 +402,7 @@ header .inner .gnb .btnMenu {
   justify-content: center;
   padding: 110px 0px;
   margin-top: 20px;
-  transition: all 1s ease-in-out;
+  transition: all 0.3 ease-in-out;
 }
 @media screen and (max-width: 1025px) {
   #intro02 {
@@ -463,6 +456,8 @@ header .inner .gnb .btnMenu {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 10%;
+    margin: 0px auto;
   }
 }
 #intro02 .inner ul li {
@@ -490,20 +485,26 @@ header .inner .gnb .btnMenu {
   }
 }
 #intro02 .inner ul li h4 {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   text-transform: uppercase;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  overflow: hidden;
   position: relative;
+  line-height: 1.3;
+  overflow: hidden;
+}
+@media screen and (max-width: 1025px) {
+  #intro02 .inner ul li h4 {
+    font-size: 14px;
+  }
 }
 #intro02 .inner ul li h4::after {
   content: "";
   position: absolute;
-  top: 4px;
+  top: -1px;
   left: -180px;
-  opacity: 1;
+  opacity: 0;
   width: 1px;
   height: 18px;
 }
@@ -523,7 +524,7 @@ header .inner .gnb .btnMenu {
   font-size: 14px;
 }
 #intro02 .inner ul li:hover {
-  transition: all 1s ease-in-out;
+  transition: all 0.3 ease-in-out;
 }
 #intro02 .inner ul li:hover .icons, #intro02 .inner ul li:hover b {
   color: #d6336c;
@@ -745,7 +746,7 @@ header .inner .gnb .btnMenu {
   display: flex;
   margin-bottom: 100px;
   justify-content: center;
-  transition: all 1s ease-in-out;
+  transition: all 0.3 ease-in-out;
 }
 #intro04 .inner {
   width: 70%;
@@ -836,7 +837,7 @@ header .inner .gnb .btnMenu {
   width: 235px;
   height: 250px;
   border: 3px solid #e64980;
-  transition: all 1s ease-in-out;
+  transition: all 0.3 ease-in-out;
 }
 @media screen and (max-width: 1025px) {
   #intro04 .inner article:hover::after {
@@ -876,7 +877,6 @@ header .inner .gnb .btnMenu {
   top: 0;
   width: 48%;
   padding-left: 20%;
-  min-width: 500px;
   height: 600px;
   transition-duration: 3s;
   transition: all 1s ease-in-out;
@@ -1120,7 +1120,7 @@ header .inner .gnb .btnMenu {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 @media screen and (max-width: 1025px) {
   #member02 {
@@ -1218,6 +1218,7 @@ header .inner .gnb .btnMenu {
   min-height: 600px;
   position: relative;
   margin-bottom: 100px;
+  overflow-x: hidden;
 }
 @media screen and (min-width: 1279px) {
   #youtubeBanner {
@@ -1247,7 +1248,7 @@ header .inner .gnb .btnMenu {
   width: 48%;
   padding-left: 20%;
   min-width: 500px;
-  height: 600px;
+  height: 100%;
   transition-duration: 3s;
   transition: all 1s ease-in-out;
 }
@@ -1270,7 +1271,7 @@ header .inner .gnb .btnMenu {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: center;
   padding-bottom: 13%;
 }
 @media screen and (min-width: 1279px) {
@@ -1314,7 +1315,7 @@ header .inner .gnb .btnMenu {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 @media screen and (max-width: 1025px) {
   #youtube01 {
@@ -1406,7 +1407,7 @@ header .inner .gnb .btnMenu {
 }
 
 #youtube02 {
-  margin: 100px auto 50px auto;
+  margin: 0px auto 50px auto;
   padding: 50px 0px;
   width: 100%;
   display: flex;
@@ -1445,21 +1446,98 @@ header .inner .gnb .btnMenu {
   background-color: #fff;
   z-index: 1;
 }
-#youtube02 .inner h3 {
+#youtube02 .inner h2 {
   letter-spacing: 8px;
   font-weight: 100;
   margin-bottom: 80px;
 }
-#youtube02 .inner ul li article .youtubeThumbnail {
+#youtube02 .inner .youtubeLists {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 0px;
+  max-width: 900px;
+}
+#youtube02 .inner .youtubeLists li {
+  border-top: #d6336c 2px solid;
+  display: flex;
+  padding: 10px 0px;
+  margin-bottom: 50px;
+  position: relative;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#youtube02 .inner .youtubeLists li:hover {
+  opacity: 0.8;
+  background-color: #bbb;
+}
+#youtube02 .inner .youtubeLists li:hover h3 {
+  color: white;
+  transform: translateX(5px);
+}
+#youtube02 .inner .youtubeLists li:hover .youtubeArrow {
+  color: white;
+  transform: translateX(-5px);
+}
+#youtube02 .inner .youtubeLists li .youtubeThumbnail {
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+@media screen and (max-width: 1025px) {
+  #youtube02 .inner .youtubeLists li .youtubeThumbnail {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 1025px) {
+  #youtube02 .inner .youtubeLists li .youtubeThumbnail img {
+    width: 200px;
+  }
+}
+#youtube02 .inner .youtubeLists li .youtubeText {
+  text-align: left;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#youtube02 .inner .youtubeLists li .youtubeText h3 {
+  text-transform: uppercase;
+  font-size: 23px;
+  line-height: 1.1;
+  transition: all 0.5s ease-in-out;
+}
+@media screen and (max-width: 1025px) {
+  #youtube02 .inner .youtubeLists li .youtubeText h3 {
+    font-size: 15px;
+  }
+}
+#youtube02 .inner .youtubeLists li .youtubeText div {
+  font-size: 11px;
+  font-weight: 100;
+  padding-bottom: 2px;
+  color: #444;
+}
+@media screen and (max-width: 1025px) {
+  #youtube02 .inner .youtubeLists li .youtubeText div {
+    font-size: 8px;
+  }
+}
+#youtube02 .inner .youtubeLists li .youtubeText div span {
+  font-weight: 600;
+}
+#youtube02 .inner .youtubeLists li .youtubeArrow {
+  color: #444;
+  font-size: 20px;
+  transition: all 0.5s ease-in-out;
 }
 #youtube02 #popup {
   position: fixed;
   top: -200px;
   left: 0;
+  padding: 5px;
   z-index: 999;
   width: 100%;
-  height: 1500px;
+  height: 1280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1470,18 +1548,89 @@ header .inner .gnb .btnMenu {
 #youtube02 #popup iframe {
   width: 80%;
   z-index: 999;
-  height: 50%;
+  height: 30%;
   min-height: 500px;
-  margin: 0px auto 100px auto;
+  margin: 0px auto 200px auto;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 #youtube02 #popup .btnClose {
+  position: absolute;
+  top: 260px;
+  right: 55px;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   cursor: pointer;
 }
+#youtube02 #popup .btnClose:hover {
+  color: #888;
+  transform: translateY(-1px);
+}
 
-.no-Scroll {
+.noScroll {
   overflow: hidden;
+}
+
+.gallery .inner > section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.gallery .inner > section article {
+  width: 25%;
+  height: 300px;
+  float: left;
+  padding: 10px;
+}
+.gallery .inner > section article > .inner {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.gallery .inner > section article > .inner .pic {
+  width: 100%;
+  height: 180px;
+  margin-bottom: 20px;
+}
+.gallery .inner > section article > .inner .pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gallery .inner > section article > .inner h2 {
+  font: normal 14px/1.2 "arial";
+  color: #777;
+}
+.gallery .pop {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 5vw;
+}
+.gallery .pop img {
+  width: 100%;
+  height: 95%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 15px;
+}
+.gallery .pop p {
+  font: 14px/1.2 "arial";
+  color: #fff;
+  text-align: center;
+}
+.gallery .pop span {
+  font: bold 14px/1 "arial";
+  color: #fff;
+  position: absolute;
+  top: 3vw;
+  right: 5vw;
+  cursor: pointer;
 }
 
 footer {

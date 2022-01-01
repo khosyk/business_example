@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Members from '../Presenter/Members';
 
 import Profile1 from '../images/p1.jpg';

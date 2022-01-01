@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 
 
 // component
@@ -9,24 +9,21 @@ import Loader from '../Components/Loader';
 import {
     BsArrowsFullscreen,
 } from 'react-icons/bs';
+import {
+    AiOutlineArrowRight
+} from 'react-icons/ai'
 
 // sources
 import loadVideo from '../images/t.mp4';
 
 
-export default function Youtube(props) {
-    const { items: data, loader } = props;
-    const [youtubePopup, setYoutubePopup] = useState(false);
-    const [youtubeData, setYoutubeData] =useState(null);
-    const body = document.body;
-    function lockScroll(){
-        body.classList.toggle('no-Scroll')
-    }
+export default function Youtube({ items, loader, youtubePopup, setYoutubePopup, setYoutubeData, youtubeData, lockScroll }) {
+console.log(items);
     return (
         <>
             <Banner />
             <Youtube01 />
-            <Youtube02 data={data} loader={loader} youtubePopup={youtubePopup} setYoutubePopup={setYoutubePopup} setYoutubeData={setYoutubeData} youtubeData={youtubeData} lockScroll={lockScroll}/>
+            <Youtube02 items={items} loader={loader} youtubePopup={youtubePopup} setYoutubePopup={setYoutubePopup} setYoutubeData={setYoutubeData} youtubeData={youtubeData} lockScroll={lockScroll} />
         </>
     )
 }
@@ -74,7 +71,9 @@ const Youtube01 = () => {
 }
 
 
-const Youtube02 = ({ data,youtubePopup, setYoutubePopup,setYoutubeData, youtubeData,lockScroll }) => {
+const Youtube02 = ({ items, youtubePopup, setYoutubePopup, setYoutubeData, youtubeData, lockScroll }) => {
+
+
     return (
         <section id="youtube02">
             <div className='inner'>
@@ -82,64 +81,51 @@ const Youtube02 = ({ data,youtubePopup, setYoutubePopup,setYoutubeData, youtubeD
                     <BsArrowsFullscreen className='innerNumberBg' />
                     <div>02</div>
                 </div>
-                <h3>
+                <h2>
                     OUR WORK
-                </h3>
-                {data === null ? <Loader /> : <div>
-                    <ul>
-                        <li>
-                        {data.map((data) => 
-                            <article key={data.id} >
-                                <div className='youtubeThumbnail'>
-                                    <img src={`${data.snippet.thumbnails.medium.url}`} alt="youtube" onClick={() => {
-                                        setYoutubePopup(true);
-                                        setYoutubeData(data);
-                                        lockScroll();
-                                    }} /> 
-                                    <h1>{`${data.snippet.title}`}</h1>
+                </h2>
+                {items === null ? <Loader /> : <div>
+                    <ul className='youtubeLists'>
+                        {items.map((items) =>
+                            <li key={items.id} onClick={() => {
+                                setYoutubePopup(true);
+                                setYoutubeData(items);
+                                lockScroll();
+                            }}>
+                                <div className='youtubeThumbnail' >
+                                    <img src={`${items.snippet.thumbnails.medium.url}`} alt="youtube"/>
+
                                 </div>
                                 <div className='youtubeText'>
-                                    <p>
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing.
-                                    </p>
-                                    <span>PROJECT 21.12.20</span>
+                                    <h3>{`${items.snippet.title}`}</h3>
+
+                                    <div> <span>PROJECT </span> 2021.{`${Math.floor(Math.random()*(12)+1)}.${Math.floor(Math.random()*(30) +1)}`
+                                        
+                                        }</div>
                                 </div>
-                            </article>)}
-                        </li>
+                                <span className='youtubeArrow'>
+                                <AiOutlineArrowRight/>
+                                </span>
+                            </li>
+                        )}
                     </ul>
-                    </div>}
-                </div>
-                {youtubePopup ? <YoutubePopup setYoutubePopup={setYoutubePopup} youtubeData={youtubeData}/> : ''}
+                </div>}
+            </div>
+            {youtubePopup ? <YoutubePopup setYoutubePopup={setYoutubePopup} youtubeData={youtubeData} /> : ''}
         </section>
     )
 }
 
 
-// const onRemove = id => {
-//     // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
-//     // = user.id 가 id 인 것을 제거함
-//     setUsers(users.filter(user => user.id !== id));
-//   };
-
-const YoutubeLists = (data) => {
-
+const YoutubePopup = ({ setYoutubePopup, youtubeData }) => {
+    const { snippet: { title, resourceId: { videoId } } } = youtubeData;
     return (
-        <>
-
-        </>
-    )
-}
-
-
-const YoutubePopup = ({setYoutubePopup, youtubeData }) => {
-    const youtubeUrl = youtubeData.snippet.resourceId.videoId;
-    const title = youtubeData.snippet.title;
-    return (
-        <figure id='popup'>
+        <aside id='popup'>
             <span className='btnClose' onClick={() => {
-                document.body.classList.remove('no-Scroll');
-                setYoutubePopup()} }>close</span>
-            <iframe src={`https://www.youtube.com/embed/${youtubeUrl}`} allowFullScreen frameBorder='0' title={title} >youtube video </iframe>
-        </figure>
+                document.body.classList.remove('noScroll');
+                setYoutubePopup()
+            }}>close</span>
+            <iframe src={`https://www.youtube.com/embed/${videoId}`} allowFullScreen frameBorder='0' title={title} ></iframe>
+        </aside>
     )
 }

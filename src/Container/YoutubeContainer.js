@@ -5,20 +5,35 @@ import Youtube from '../Presenter/Youtube';
 
 
 export default function YoutubeContainer() {
+    // Loader는 로딩의 스테이트
+    // items는 유튜브 리스트 데이터를 로드하기위한 스테이트
+    // youtubePopup은 popup 창 state
+    // youtubeData는 popup 창을 로드하기위한 state
     const [loader, setLoader] =useState(true);
-    const [items, setItems] = useState(null)    
+    const [items, setItems] = useState(null)
+    const [youtubePopup, setYoutubePopup] = useState(false);
+    const [youtubeData, setYoutubeData] =useState(null);
+    const body = document.body;
+    
     useEffect(() =>{
         GetYoutube()
     },[])
-    return(
-        <Youtube items={items} loader={loader} />
-    )
 
+    return(
+        <Youtube 
+        items={items} 
+        loader={loader} 
+        youtubePopup={youtubePopup} 
+        setYoutubePopup={setYoutubePopup} 
+        youtubeData={youtubeData} 
+        setYoutubeData={setYoutubeData}
+        lockScroll={lockScroll}/>
+    )
     
 async function GetYoutube(){
 
     const playListId = 'PLaSDflnRoEc328ekRsg_PzCFn7FWtAVYG'
-    const num = 3;
+    const num = 4;
     const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyAHktbABRsBIOdePuAZVbwNE1spHHuJ3_Y&playlistId=${playListId}&maxResults=${num}`;
 
     try{
@@ -31,5 +46,9 @@ async function GetYoutube(){
         alert(`Youtube error: ${err}`)
     }
 };
+    function lockScroll(){
+        body.classList.toggle('noScroll')
+    }
+    
 }
 

@@ -6,6 +6,7 @@
     min-height: 600px;
     position: relative;
     margin-bottom:100px;
+    overflow-x: hidden;
     @media screen and (min-width:1279px) {
         min-height:none;
         padding-top:50%;
@@ -33,7 +34,7 @@
         width:48%;
         padding-left:20%;
         min-width:500px;
-        height:600px;
+        height:100%;
         transition-duration: 3s;
         transition:all 1s ease-in-out;
         @media screen and(max-width:1279px) {
@@ -51,7 +52,7 @@
         display: flex;
         flex-direction: column;
         align-items:flex-start;
-        justify-content: space-around;
+        justify-content: center;
         padding-bottom:13%;
         @media screen and(min-width:1279px){
             height:100%;
@@ -99,7 +100,7 @@
     display: flex;
     width:100%;
     justify-content: center;
-    margin-bottom:100px;
+    margin-bottom:10px;
     @media screen and(max-width:1025px) {
         overflow: hidden;
     }
@@ -185,7 +186,7 @@
 
 
 #youtube02{
-    margin:100px auto 50px auto;
+    margin:0px auto 50px auto;
     padding: 50px 0px;
     width:100%;
     display: flex;
@@ -223,21 +224,83 @@
             }
         }
 
-        h3{
+        h2{
             letter-spacing: 8px;
             font-weight: 100;
             margin-bottom: 80px;
         }
 
-        ul{
+        .youtubeLists{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding:50px 0px;
+            max-width: 900px;
             li{
-                article{
-                    .youtubeThumbnail{
-                        cursor:pointer;
+                border-top: #d6336c 2px solid;
+                display: flex;
+                padding:10px 0px;
+                margin-bottom:50px;
+                position: relative;
+                cursor:pointer;
+                transition: all .3s ease-in-out;
+                &:hover{
+                    opacity: 0.8;
+                    background-color: #bbb;
+                    h3{
+                        color:white;
+                        transform: translateX(5px);
                     }
-                    .youtubeText{
-
+                    .youtubeArrow{
+                        color:white;
+                        transform: translateX(-5px);
                     }
+                }
+                .youtubeThumbnail{
+                    z-index: -1;
+                    @media screen and(max-width:1025px) {
+                        width:200px;
+                    }
+                    transition: all .3s ease-in-out;
+                    img{
+                        @media screen and(max-width:1025px) {
+                            width:200px;
+                        }
+                    }
+                }
+                .youtubeText
+                {
+                    text-align: left;
+                    padding:0px 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    h3{
+                        text-transform: uppercase;
+                        font-size: 23px;
+                        line-height: 1.1;
+                        transition: all .5s ease-in-out;
+                        @media screen and(max-width:1025px) {
+                            font-size: 15px;
+                        }
+                    }
+                    div{
+                        font-size: 11px;
+                        font-weight: 100;
+                        padding-bottom:2px;
+                        color:#444;
+                        @media screen and(max-width:1025px) {
+                            font-size: 8px;
+                        }
+                        span{
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .youtubeArrow{
+                    color:#444;
+                    font-size:20px;
+                    transition: all .5s ease-in-out;
                 }
             }
         }
@@ -247,9 +310,10 @@
         position: fixed;
         top:-200px;
         left:0;
+        padding:5px;
         z-index: 999;
         width:100%;
-        height:1500px;
+        height:1280px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -259,18 +323,26 @@
         iframe{
             width:80%;
             z-index: 999;
-            height:50%;
+            height:30%;
             min-height:500px;
-            margin:0px auto 100px auto;
+            margin:0px auto 200px auto;
+            background-color: rgba(0,0,0,0.9);
         }
         .btnClose{
+            position: absolute;
+            top:260px;
+            right:55px;
             color:white;
-            font-size: 30px;
+            font-size: 20px;
             cursor: pointer;
+            &:hover{
+                color:#888;
+                transform: translateY(-1px);
+            }
         }
     }
 }
 
-.no-Scroll{
+.noScroll{
     overflow: hidden;
 }
