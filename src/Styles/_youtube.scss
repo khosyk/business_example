@@ -6,7 +6,7 @@
     min-height: 600px;
     position: relative;
     margin-bottom:100px;
-    overflow-x: hidden;
+    overflow: hidden;
     @media screen and (min-width:1279px) {
         min-height:none;
         padding-top:50%;
@@ -24,6 +24,7 @@
         min-height:600px;
         height: inherit;
         top:0;
+        
     }
 
     .inner{
@@ -41,11 +42,7 @@
             width:100%;
             padding-left:19%;
         }
-        @media screen and(min-width:1279px){
-            height:100%;
-        }
         .wrap{
-        height:50%;
         color:#fff;
         text-shadow: 1px 1px 2px #000;
         position: relative;
@@ -53,18 +50,13 @@
         flex-direction: column;
         align-items:flex-start;
         justify-content: center;
-        padding-bottom:13%;
-        @media screen and(min-width:1279px){
-            height:100%;
-            justify-content: center;
-        }
         p{
             display: inline-block;
             font-size:14px;
             font-weight:100;
             padding-left:2px;
             letter-spacing: 5px;
-            padding-bottom: 50px;
+            padding-bottom: 70px;
         }
         .title{
             span{
@@ -82,12 +74,9 @@
                 font-family: 'Black Han Sans', sans-serif;
                 span{
                 color:#d6336c;
-                letter-spacing: 3px;
-                font-size:40px;
-                font-weight: bolder;
-                font-family: 'Black Han Sans', sans-serif;
                 }
             }
+            padding-bottom:35px;
         }
         }
     }
@@ -111,7 +100,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding:120px 0px;       
+        padding:10px 0px;       
         transition: all .3s ease-in-out;
         @media screen and(max-width:1025px) {
             width:100%;
@@ -308,12 +297,12 @@
     
     #popup{
         position: fixed;
-        top:-200px;
+        top:0;
         left:0;
         padding:5px;
         z-index: 999;
         width:100%;
-        height:1280px;
+        height:100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -323,15 +312,14 @@
         iframe{
             width:80%;
             z-index: 999;
-            height:30%;
-            min-height:500px;
-            margin:0px auto 200px auto;
+            min-height:400px;
+            margin:0px auto;
             background-color: rgba(0,0,0,0.9);
         }
         .btnClose{
             position: absolute;
-            top:260px;
-            right:55px;
+            top:10%;
+            right:10%;
             color:white;
             font-size: 20px;
             cursor: pointer;

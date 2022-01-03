@@ -17,20 +17,18 @@ import {
 import loadVideo from '../images/t.mp4';
 
 
-export default function Youtube({ items, loader, youtubePopup, setYoutubePopup, setYoutubeData, youtubeData, lockScroll }) {
-console.log(items);
+export default function Youtube({ items, loader, isPop, setIsPop, setYoutubeData, youtubeData, lockScroll }) {
     return (
         <>
             <Banner />
             <Youtube01 />
-            <Youtube02 items={items} loader={loader} youtubePopup={youtubePopup} setYoutubePopup={setYoutubePopup} setYoutubeData={setYoutubeData} youtubeData={youtubeData} lockScroll={lockScroll} />
+            <Youtube02 />
         </>
     )
-}
 
+    
 
-
-const Banner = () => {
+function Banner(){
     return (<>
 
         <section id="youtubeBanner">
@@ -54,14 +52,14 @@ const Banner = () => {
 }
 
 
-const Youtube01 = () => {
+function Youtube01 () {
 
     return (
 
         <section id='youtube01'>
             <Article
                 name='word'
-                num='01' first='LOREM' second='IPSUM' third='Lorem ipsum, dolor sit amet'
+                num='01' first='PORT' second='FOLIOS' third='Lorem ipsum, dolor sit amet'
                 fourth='adipisicing elit. Incidunt blanditiis fugiat similique cupiditate nobis fugit, veniam amet aut distinctio obcaecati?'
             />
 
@@ -71,7 +69,7 @@ const Youtube01 = () => {
 }
 
 
-const Youtube02 = ({ items, youtubePopup, setYoutubePopup, setYoutubeData, youtubeData, lockScroll }) => {
+function Youtube02 (){
 
 
     return (
@@ -88,7 +86,7 @@ const Youtube02 = ({ items, youtubePopup, setYoutubePopup, setYoutubeData, youtu
                     <ul className='youtubeLists'>
                         {items.map((items) =>
                             <li key={items.id} onClick={() => {
-                                setYoutubePopup(true);
+                                setIsPop(true);
                                 setYoutubeData(items);
                                 lockScroll();
                             }}>
@@ -111,21 +109,23 @@ const Youtube02 = ({ items, youtubePopup, setYoutubePopup, setYoutubeData, youtu
                     </ul>
                 </div>}
             </div>
-            {youtubePopup ? <YoutubePopup setYoutubePopup={setYoutubePopup} youtubeData={youtubeData} /> : ''}
+            {isPop ? <YoutubePopup/> : ''}
         </section>
     )
 }
 
 
-const YoutubePopup = ({ setYoutubePopup, youtubeData }) => {
+function YoutubePopup () {
     const { snippet: { title, resourceId: { videoId } } } = youtubeData;
     return (
         <aside id='popup'>
             <span className='btnClose' onClick={() => {
                 document.body.classList.remove('noScroll');
-                setYoutubePopup()
+                setIsPop()
             }}>close</span>
             <iframe src={`https://www.youtube.com/embed/${videoId}`} allowFullScreen frameBorder='0' title={title} ></iframe>
         </aside>
     )
 }
+}
+

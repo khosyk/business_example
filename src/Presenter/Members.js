@@ -117,8 +117,8 @@ const Member01 = (members) => {
                 </h3>
                 <ul>
                     {
-                        memeberData.map((memeberData) => <MemberList memeberData = {memeberData}
-                        key={memeberData.index}/>)
+                        memeberData.map((memeberData,index) => <MemberList memeberData = {memeberData}
+                        key={index}/>)
                     }
                 </ul>
             </div>
@@ -128,7 +128,6 @@ const Member01 = (members) => {
 
 const MemberList = (memeberData) => {
     const {name, title, src} = memeberData.memeberData;
-    console.log(src);
     return(
         
         <li>

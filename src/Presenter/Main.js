@@ -21,6 +21,7 @@ import { FaUserFriends } from 'react-icons/fa';
 
 
 export default function Main() {
+
     return (
         <>
             <Banner />
@@ -32,11 +33,10 @@ export default function Main() {
     )
 }
 
-
- const Banner = () => {
+const Banner = () => {
     return (
 
-        <section id="banner">
+        <section id="banner" >
             <div className="inner">
                 <div className='wrap'>
                 <p>
