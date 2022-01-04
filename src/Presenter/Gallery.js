@@ -1,6 +1,6 @@
 import React from 'react';
 import Article from '../Components/Article';
-
+import Loader from '../Components/Loader';
 
 const body = document.querySelector("body");
 
@@ -53,22 +53,21 @@ function Gallery({items, setIsPop,setIndex, isPop, index, showPop, imgSrc}) {
         return(
             <main id="gallery02">
                 <div className="inner">
-                    <section>
-                        {
-                            items.map((item, index) => {
+                    {items.length <= 0 ? <Loader/> :<section>
+                        {items.map((item, index) => {
                                 const imgSrc = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`;
                                 return (
-                                    <article key={index}>
+                                    <article key={index} onClick={() => {
+                                        setIsPop(true);
+                                        //버튼 클릭시 index state변경
+                                        setIndex(index);
+                                        showPop(index);
+                                    }}>
                                         <div className="inner">
                                             <span>
                                                 {item.id.substring(7,11)}.
                                             </span>
-                                            <div className="pic" onClick={() => {
-                                                setIsPop(true);
-                                                //버튼 클릭시 index state변경
-                                                setIndex(index);
-                                                showPop(index);
-                                            }}>
+                                            <div className="pic" >
                                                 <img src={imgSrc} alt={`${item.title}`}/>
                                             </div>
                                             <h2>{ item.title === '' ? 'NULL' : item.title}</h2>
@@ -83,8 +82,9 @@ function Gallery({items, setIsPop,setIndex, isPop, index, showPop, imgSrc}) {
                                 )
                             })
                         }
-                    </section>
-    
+
+
+                    </section>}
                 </div>
                 {isPop ? <Pop /> : null}
     

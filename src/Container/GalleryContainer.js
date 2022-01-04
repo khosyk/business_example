@@ -14,11 +14,12 @@ export default function GalleryContainer() {
     let [isPop, setIsPop] = useState(false);
     //썸네일 클릭 이벤트 발생시 해당 순번값을 관리하는 state생성
     let [index, setIndex] = useState(0);
-    let [numbers, setNumbers] =useState(9);
+    let [numbers, setNumbers] =useState(12);
     let [imgSrc, setImgSrc] = useState(null);
 
     const api_key = "e7ed3b39fe112d7e93d03c19325305e0";
     const url = `https://www.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=${api_key}&per_page=${numbers}&format=json&nojsoncallback=1`;
+
 
     
     useEffect(() => {
@@ -27,6 +28,7 @@ export default function GalleryContainer() {
             .then(json => {
                 setItems(json.data.photos.photo);
             })
+            
     }, []);
 
     return(
