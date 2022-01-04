@@ -11,20 +11,20 @@ export default function YoutubeContainer() {
     // youtubeData는 popup 창을 로드하기위한 state
     const [loader, setLoader] =useState(true);
     const [items, setItems] = useState(null)
-    const [youtubePopup, setYoutubePopup] = useState(false);
+    const [isPop, setIsPop] = useState(false);
     const [youtubeData, setYoutubeData] =useState(null);
     const body = document.body;
     
     useEffect(() =>{
         GetYoutube()
     },[])
-
+    
     return(
         <Youtube 
         items={items} 
         loader={loader} 
-        youtubePopup={youtubePopup} 
-        setYoutubePopup={setYoutubePopup} 
+        isPop={isPop} 
+        setIsPop={setIsPop} 
         youtubeData={youtubeData} 
         setYoutubeData={setYoutubeData}
         lockScroll={lockScroll}/>
@@ -51,4 +51,3 @@ async function GetYoutube(){
     }
     
 }
-
